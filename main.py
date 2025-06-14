@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from utils import get_db_connection, get_schema_info, generate_sql, execute_sql
+# from utils import get_db_connection, get_schema_info, generate_sql, execute_sql
 
 app = FastAPI()
 
@@ -27,7 +27,7 @@ def query_data(data: PromptInput):
         # print("Generated SQL:", sql)
 
         # results = execute_sql(, cursor)
-        return {"success": True, "query": "select", "results":PromptInput.question}
+        return {"success": True, "query": "select", "results":data}
     
     except Exception as e:
         return {"success": False, "error": str(e)}
