@@ -16,6 +16,10 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
+@app.get("/")
+def root():
+    return {"message": "FastAPI is working!"}
+
 @app.post("/query")
 def query_data(data: PromptInput):
     try:
